@@ -530,8 +530,8 @@ Transform:
   m_GameObject: {fileID: 125447265}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5, y: -13.23703, z: 0}
-  m_LocalScale: {x: 183.93892, y: 183.93892, z: 183.93892}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 310509320}
@@ -555,8 +555,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.02, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.23, y: -0.01, z: 1.24}
+  m_Center: {x: 0, y: 0.02, z: 0}
 --- !u!1 &134959681
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,7 +596,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1224, y: 703}
+  m_AnchoredPosition: {x: 1945.0001, y: 703}
   m_SizeDelta: {x: 316.4, y: 145.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &134959683
@@ -1539,6 +1539,52 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 1
+--- !u!1 &435692727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 435692729}
+  - component: {fileID: 435692728}
+  m_Layer: 0
+  m_Name: TowerDestroy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &435692728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435692727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5680181b801e7bb44895004d08a85e2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 282237121508318100, guid: 4c13dbd585757a2418b9d1a5a9d20801, type: 3}
+  _parent: {fileID: 310509320}
+--- !u!4 &435692729
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435692727}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0200436, y: -0.35042545, z: 0.9166759}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &442699611
 GameObject:
   m_ObjectHideFlags: 0
@@ -1995,18 +2041,6 @@ MonoBehaviour:
   _onDie:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 588095858}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
         m_MethodName: Play
@@ -2016,7 +2050,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Hidden
+          m_StringArgument: TowerHidden
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 56481692}
@@ -2050,6 +2084,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 435692728}
+        m_TargetAssemblyTypeName: InstantiatePoolObject, Assembly-CSharp
+        m_MethodName: InstantiateObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 435692729}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2420,7 +2466,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1221, y: 535}
+  m_AnchoredPosition: {x: 1942, y: 535}
   m_SizeDelta: {x: 316.4, y: 145.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &814750505
@@ -2503,7 +2549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17885b5e8b0064747a7f86d7ec3d1df5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gunCost: 2
+  _gunCost: 4
   _gunPoolObject: {fileID: 95616385}
   _coinsNumber: {fileID: 442699613}
   _onGunPurchased:
@@ -2649,23 +2695,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 63dfb1db97d69414a9869b171e103ab4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 11.284596
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 63dfb1db97d69414a9869b171e103ab4, type: 3}
       propertyPath: m_LocalScale.y
-      value: 11.284596
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 63dfb1db97d69414a9869b171e103ab4, type: 3}
       propertyPath: m_LocalScale.z
-      value: 11.284596
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 63dfb1db97d69414a9869b171e103ab4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5
+      value: -0.002
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 63dfb1db97d69414a9869b171e103ab4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 60
+      value: 0.193
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 63dfb1db97d69414a9869b171e103ab4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3733,7 +3779,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: '10
+
+'
 --- !u!222 &1389440073
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4376,3 +4424,4 @@ SceneRoots:
   - {fileID: 95616386}
   - {fileID: 1681997530}
   - {fileID: 2067132725}
+  - {fileID: 435692729}
